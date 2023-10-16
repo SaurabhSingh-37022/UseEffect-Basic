@@ -5,20 +5,27 @@ function UseEffect1(){
     const [count,setCount] = useState(0)
 
     function Inc(){
-        setCount(count + 1)
+        setCount(count + 1 )
         
 
     }
 
     useEffect(()=>{
+        console.log("I am First")
         if (count>=1){
             document.title = `chats (${count})`
      } else {
         document.title = `chats`
      }
        
-    })
-    console.log("Hello Outside")
+    },[count]);
+    
+
+    useEffect(()=>{
+        console.log("I am Second")
+    },[]) 
+    console.log("Hello Outside");   
+    
        
     return(
         <div className="use">
