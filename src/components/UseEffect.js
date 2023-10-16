@@ -11,7 +11,12 @@ function UseEffect1(){
     }
 
     useEffect(()=>{
-        document.title = `WhatApp (${count})`
+        if (count>=1){
+            document.title = `chats (${count})`
+     } else {
+        document.title = `chats`
+     }
+       
     })
     console.log("Hello Outside")
        
